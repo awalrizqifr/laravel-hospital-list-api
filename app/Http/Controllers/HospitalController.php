@@ -6,7 +6,7 @@ use App\Http\Requests\HospitalRequest;
 use App\Http\Resources\HospitalCollection;
 use App\Http\Resources\HospitalResource;
 use App\Models\Hospital;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class HospitalController extends Controller
 {
@@ -66,6 +66,8 @@ class HospitalController extends Controller
      */
     public function destroy(Hospital $hospital)
     {
-        //
+        $hospital->delete();
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
