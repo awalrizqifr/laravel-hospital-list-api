@@ -14,6 +14,13 @@ class HospitalResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'address' => $this->address,
+            'region' => $this->region,
+            'phoneNumber' => $this->phoneNumber,
+            'province' => $this->province
+        ];
     }
 }
