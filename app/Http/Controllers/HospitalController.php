@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HospitalRequest;
 use App\Http\Resources\HospitalCollection;
+use App\Http\Resources\HospitalResource;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 
@@ -24,9 +26,11 @@ class HospitalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HospitalRequest $request)
     {
-        //
+        $hospital = Hospital::create($request->all());
+
+        return new HospitalResource($hospital);
     }
 
     /**
