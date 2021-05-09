@@ -18,7 +18,7 @@ class CreateHospitalsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('region');
-            $table->string('phone');
+            $table->string('phoneNumber');
             $table->string('province');
             $table->timestamps();
         });

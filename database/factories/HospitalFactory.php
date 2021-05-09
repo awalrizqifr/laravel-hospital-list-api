@@ -22,7 +22,11 @@ class HospitalFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->company,
+            'address' => $this->faker->address,
+            'region' => $this->faker->city,
+            'phoneNumber' => $this->faker->phoneNumber,
+            'province' => $this->faker->state
         ];
     }
 }
