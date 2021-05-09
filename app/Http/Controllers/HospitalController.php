@@ -51,9 +51,11 @@ class HospitalController extends Controller
      * @param  \App\Models\Hospital  $hospital
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hospital $hospital)
+    public function update(HospitalRequest $request, Hospital $hospital)
     {
-        //
+        $hospital->update($request->all());
+
+        return new HospitalResource($hospital);
     }
 
     /**
