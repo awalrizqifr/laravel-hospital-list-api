@@ -28,7 +28,7 @@ class HospitalController extends Controller
      */
     public function store(HospitalRequest $request)
     {
-        $hospital = Hospital::create($request->all());
+        $hospital = Hospital::create($request->validated());
 
         return new HospitalResource($hospital);
     }
@@ -53,7 +53,7 @@ class HospitalController extends Controller
      */
     public function update(HospitalRequest $request, Hospital $hospital)
     {
-        $hospital->update($request->all());
+        $hospital->update($request->validated());
 
         return new HospitalResource($hospital);
     }
